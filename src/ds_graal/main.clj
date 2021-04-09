@@ -12,4 +12,6 @@
     (println "price mean:" (dfn/mean (test-ds :price)))
     (parquet/ds->parquet test-ds "stocks.parquet")
     (println "succesfully wrote stocks.parquet")
+    (let [pds (first (parquet/parquet->ds-seq "stocks.parquet"))]
+      (println "price mean:" (dfn/mean (pds "price"))))
     0))
