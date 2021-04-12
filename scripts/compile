@@ -29,6 +29,7 @@ graalvm/bin/native-image \
     --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeRSRawEncoder \
     --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeXORRawEncoder \
     --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeXORRawDecoder \
+    --enable-https \
     -J-Dclojure.spec.skip-macros=true \
     -J-Dclojure.compiler.direct-linking=true \
     -J-Dtech.v3.datatype.graal-native=true \

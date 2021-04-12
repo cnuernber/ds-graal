@@ -7,7 +7,7 @@
 
 (defn -main
   [& args]
-  (let [test-ds (ds/->dataset "test/data/stocks.csv" {:key-fn keyword})]
+  (let [test-ds (ds/->dataset "https://raw.githubusercontent.com/techascent/tech.ml.dataset/master/test/data/stocks.csv" {:key-fn keyword})]
     (println test-ds)
     (println "price mean:" (dfn/mean (test-ds :price)))
     (parquet/ds->parquet test-ds "stocks.parquet")
